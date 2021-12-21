@@ -5,6 +5,7 @@ import { getFilesOfAssets } from '../src/filesManager';
 import { getRandom } from '../src/random';
 import { configurationTest } from './configTest';
 import hash from 'object-hash';
+import { drawNft } from '../src/drawServices';
 
 describe('DNA Generator', () => {
   //   it('generateDna return angel if the skin is angel', async () => {
@@ -56,14 +57,18 @@ describe('DNA Generator', () => {
   //   });
 
   it.only('generateDna return demon if the skin is demon', async () => {
-    let list = [];
-    for (let index = 0; index < 10000; index++) {
+    // let list = [];
+    // for (let index = 0; index < 10000; index++) {
+    //   const result = generateDna(configuration);
+    //   const paths = await getFilesOfAssets(result);
+    //   const hashResult = hash(paths);
+    //   list.push(hashResult);
+    // }
+    // console.log(list);
+    for (let index = 0; index < 10; index++) {
       const result = generateDna(configuration);
       const paths = await getFilesOfAssets(result);
-      const hashResult = hash(paths);
-      list.push(hashResult);
+      await drawNft(paths, index.toString());
     }
-    console.log(list);
   });
 });
-

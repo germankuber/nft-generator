@@ -30,6 +30,7 @@ export const generateDna = (config: Config[]): Dna[] =>
               (k.groupsExcepted != null &&
                 !k.groupsExcepted.some((r) => total.group.includes(r))),
           );
+          console.log(total.group);
           const kind = getKind(kindsFiltered);
 
           return {
@@ -55,7 +56,18 @@ export const generateDna = (config: Config[]): Dna[] =>
       kinds: [],
       group: [],
     },
-  ).kinds;
+  ).kinds.sort((a: Dna, b: Dna) => {
+    if (a.position < b.position) 
+      return -1;
+    if (a.position > b.position) 
+      return 1;
+    return 0;
+  });
+  
+const logDna = (kinds: Kind[]):Kind[]=>{
+  return kinds;
+}
+
 
 const getKind = (kindsFiltered: Kind[]) => {
   if (kindsFiltered.length == 0)
