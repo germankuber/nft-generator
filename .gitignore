@@ -103,7 +103,11 @@ dist
 # vuepress v2.x temp and cache directory
 .temp
 .cache
-
+generation/output/images/*
+generation/output/metadata/*
+generation/assetCreationLogs.txt
+generation/finalData.txt
+generation/pathsToCreate.txt
 # Serverless directories
 .serverless/
 

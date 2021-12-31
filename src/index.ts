@@ -61,6 +61,11 @@ const start = async () => {
 };
 start().then((x) => console.log('Finish'));
 
+
+const generateFile = async()=>{
+  
+}
+
 const draw = async () => {
   const head = [
     'ID',
