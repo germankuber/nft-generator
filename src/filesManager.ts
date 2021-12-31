@@ -10,7 +10,7 @@ export const getFilesOfAssetsPaths = (
     const directoryPath = path.join(__dirname, '../assets', pathOfAssets);
     fs.readdir(directoryPath, (err, files) => {
       if (err) reject(err);
-      resolve(files);
+      resolve(files.filter((x) => x! + '.DS_Store'));
     });
   });
 
@@ -39,20 +39,20 @@ export interface AssetsFolders {
 const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
-export const logAssetCreationFile = (toLog: string) => {
+export const writeFile = (file: string, toWrite: string) => {
   return new Promise(async (resolve, reject) => {
-    const directoryPath = path.join(__dirname, '../', 'assetCreationLogs.txt');
+    const directoryPath = path.join(__dirname, '../', file);
 
-    fs.appendFile(directoryPath, toLog + '\n', (err) => {
+    fs.appendFile(directoryPath, toWrite + '\n', (err) => {
       if (err) reject(err);
       resolve("It's saved!");
     });
   });
 };
 
-export const readLogAssetCreationFile = (): Promise<string[]> => {
+export const readFile = (file: string): Promise<string[]> => {
   return new Promise(async (resolve, reject) => {
-    const directoryPath = path.join(__dirname, '../', 'assetCreationLogs.txt');
+    const directoryPath = path.join(__dirname, '../', file);
     var array = fs.readFileSync(directoryPath).toString().split('\n');
     resolve(array);
   });

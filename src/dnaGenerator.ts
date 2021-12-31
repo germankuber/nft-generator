@@ -2,41 +2,14 @@ import { Config, Kind } from './config';
 import { GetRandom, getRandom } from './random';
 
 export const generateDna = (config: Config[]): Dna[] =>
-  config.reduce(
-    (total: ReduceData, currentValue: Config) => {
-      if (total.kinds.length == 0) {
-        const kind = getKind(currentValue.kinds);
-        return {
-          group: kind.group,
-          kinds: [
-            {
-              layer: currentValue.layer,
-              layerFolder: currentValue.folder,
-              position: currentValue.position,
-              kind: {
-                kind: kind.kind,
-                folder: kind.folder,
-              },
-            },
-          ],
-        };
-      } else {
-        if (total.group != null && total.group.length > 0) {
-          const kindsFiltered = currentValue.kinds.filter(
-            (k) =>
-              k.forAll ||
-              (k.groupsDependency != null &&
-                k.groupsDependency.some((r) => total.group.includes(r))) ||
-              (k.groupsExcepted != null &&
-                !k.groupsExcepted.some((r) => total.group.includes(r))),
-          );
-          console.log(total.group);
-          const kind = getKind(kindsFiltered);
-
+  config
+    .reduce(
+      (total: ReduceData, currentValue: Config) => {
+        if (total.kinds.length == 0) {
+          const kind = getKind(currentValue.kinds);
           return {
-            group: total.group,
+            group: kind.group,
             kinds: [
-              ...total.kinds,
               {
                 layer: currentValue.layer,
                 layerFolder: currentValue.folder,
@@ -48,26 +21,50 @@ export const generateDna = (config: Config[]): Dna[] =>
               },
             ],
           };
+        } else {
+          if (total.group != null && total.group.length > 0) {
+            const kindsFiltered = currentValue.kinds.filter(
+              (k) =>
+                k.forAll ||
+                (k.groupsDependency != null &&
+                  k.groupsDependency.some((r) => total.group.includes(r))) ||
+                (k.groupsExcepted != null &&
+                  !k.groupsExcepted.some((r) => total.group.includes(r))),
+            );
+            const kind = getKind(kindsFiltered);
+            return {
+              group: total.group,
+              kinds: [
+                ...total.kinds,
+                {
+                  layer: currentValue.layer,
+                  layerFolder: currentValue.folder,
+                  position: currentValue.position,
+                  kind: {
+                    kind: kind.kind,
+                    folder: kind.folder,
+                  },
+                },
+              ],
+            };
+          }
         }
-      }
-      return total;
-    },
-    <ReduceData>{
-      kinds: [],
-      group: [],
-    },
-  ).kinds.sort((a: Dna, b: Dna) => {
-    if (a.position < b.position) 
-      return -1;
-    if (a.position > b.position) 
-      return 1;
-    return 0;
-  });
-  
-const logDna = (kinds: Kind[]):Kind[]=>{
-  return kinds;
-}
+        return total;
+      },
+      <ReduceData>{
+        kinds: [],
+        group: [],
+      },
+    )
+    .kinds.sort((a: Dna, b: Dna) => {
+      if (a.position < b.position) return -1;
+      if (a.position > b.position) return 1;
+      return 0;
+    });
 
+const logDna = (kinds: Kind[]): Kind[] => {
+  return kinds;
+};
 
 const getKind = (kindsFiltered: Kind[]) => {
   if (kindsFiltered.length == 0)

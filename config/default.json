@@ -1,0 +1,16 @@
+{
+  "generation": {
+    "firstId": 100,
+    "lastId": 5000,
+    "image": {
+      "size": {
+        "width": 350,
+        "height": 350
+      }
+    }
+  },
+  "assets": {
+    "width": 2880,
+    "height": 2880
+  }
+}

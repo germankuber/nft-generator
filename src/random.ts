@@ -1,7 +1,10 @@
 var weightedRandom = require('weighted-random');
+var weightedRandomObject = require('weighted-random-object');
+export const getRandom = (weights: GetRandom[]) => {
+  const result = weightedRandomObject(weights);
 
-export const getRandom = (weights: GetRandom[]) =>
-  weightedRandom(weights.map((weight) => weight.weight));
+  return weightedRandom(weights.map((weight) => weight.weight));
+};
 
 export interface GetRandom {
   weight: number;

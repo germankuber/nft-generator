@@ -1,31 +1,31 @@
 import { createCanvas, loadImage } from 'canvas';
 import fs from 'fs';
 import path from 'path';
+const config = require('config');
+const assetsWidth = config.get('assets.width');
+const assetsHeight = config.get('assets.height');
 
-const canvas = createCanvas(2880, 2880);
+const imageWidth = config.get('generation.image.size.width');
+const imageHeight = config.get('generation.image.size.height');
+const canvas = createCanvas(imageWidth, imageHeight);
 const ctx = canvas.getContext('2d');
 
-// // Write "Awesome!"
-// ctx.font = '30px Impact';
-// ctx.rotate(0.1);
-// ctx.fillText('Awesome!', 50, 100);
-
-// // Draw line under text
-// var text = ctx.measureText('Awesome!');
-// ctx.strokeStyle = 'rgba(0,0,0,0.5)';
-// ctx.beginPath();
-// ctx.lineTo(50, 102);
-// ctx.lineTo(50 + text.width, 102);
-// ctx.stroke();
-
 export const drawNft = async (paths: string[], fileName: string) => {
-  for (const iterator of paths) {
-    console.log(iterator)
-    const image = await loadImage(path.join(__dirname, '../assets/', iterator));
-    ctx.drawImage(image, 0, 0);
-  }
+  for (const iterator of paths)
+    ctx.drawImage(
+      await loadImage(path.join(__dirname, '../assets/', iterator)),
+      0,
+      0,
+      assetsWidth,
+      assetsHeight,
+      0,
+      0,
+      imageWidth,
+      imageHeight,
+    );
+
   fs.writeFileSync(
-    path.join(__dirname, '../output/', `${fileName}.png`),
+    path.join(__dirname, '../generation/output/images/', `${fileName}.png`),
     canvas.toBuffer('image/png'),
   );
 };
