@@ -1,0 +1,5 @@
+ID,Background 1,Background 2,BodyColor,Bottoms,Pings,Faces,Accessories,Hats,Arms,Frame
+ID,Background 1,Background 2,BodyColor,Bottoms,Pings,Faces,Accessories,Hats,Arms,Frame
+ID,Background 1,Background 2,BodyColor,Bottoms,Pings,Faces,Accessories,Hats,Arms,Frame
+ID,Background 1,Background 2,BodyColor,Bottoms,Pings,Faces,Accessories,Hats,Arms,Frame
+ID,Background 1,Background 2,BodyColor,Bottoms,Pings,Faces,Accessories,Hats,Arms,Frame

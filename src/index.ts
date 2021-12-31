@@ -23,6 +23,13 @@ const start = async () => {
 
   await writeFile('finalData.txt', head.join(','));
   for (let index = firstId; index <= lastId; index++) {
+    await generateFileData(index, head);
+  }
+};
+start().then((x) => console.log('Finish'));
+
+const generateFileData = async (index: number, head: string[]) => {
+  try {
     const result = generateDna(configuration);
     const paths = await getFilesOfAssets(result);
     config;
@@ -57,14 +64,10 @@ const start = async () => {
       );
       console.table([dataReturn], head);
     }
+  } catch (error) {
+    await generateFileData(index, head);
   }
 };
-start().then((x) => console.log('Finish'));
-
-
-const generateFile = async()=>{
-  
-}
 
 const draw = async () => {
   const head = [
