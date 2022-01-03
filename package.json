@@ -23,6 +23,7 @@
     "chai": "^4.3.4",
     "config": "^3.3.6",
     "jest": "^27.4.5",
+    "json-merger": "^1.1.7",
     "object-hash": "^2.2.0",
     "ts-node": "^10.4.0",
     "weighted-random": "^0.1.0",

@@ -14,7 +14,7 @@ export const getFilesOfAssetsPaths = (
     });
   });
 
-export const getFilesOfAssets = (assets: Dna[]): Promise<string[]> => {
+export const getFilesOfAssets = (assets: Dna[]): Promise<PathData[]> => {
   return new Promise(async (resolve, reject) => {
     const files = await assets.map(async (x) => {
       const folder = x.kind.folder;
@@ -26,11 +26,20 @@ export const getFilesOfAssets = (assets: Dna[]): Promise<string[]> => {
           ? randomIntFromInterval(0, filesFromDirectory.length - 1)
           : 0;
       const fileToDraw = filesFromDirectory[positionRandom];
-      return `${x.layerFolder}/${folder}/${fileToDraw}`;
+      return  {
+        layer: x.layer,
+        fileName: fileToDraw,
+        filePath: `${x.layerFolder}/${folder}/${fileToDraw}`,
+      };
     });
     resolve(Promise.all(files));
   });
 };
+export interface PathData {
+  layer: string;
+  fileName: string;
+  filePath: string;
+}
 export interface AssetsFolders {
   kind: string;
   folder: string;
@@ -57,3 +66,4 @@ export const readFile = (file: string): Promise<string[]> => {
     resolve(array);
   });
 };
+

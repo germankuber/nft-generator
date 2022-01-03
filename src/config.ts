@@ -13,7 +13,6 @@ const pink = 'Pink';
 
 const red = 'Red';
 const yellow = 'Yellow';
-
 export const configuration: Config[] = [
   {
     layer: 'Body Color',
@@ -90,11 +89,133 @@ export const configuration: Config[] = [
         group: [normal, brown],
       },
     ],
+    files: [
+      {
+        name: 'BodyColor_Angel.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Angel',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Brown.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Brown',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Demon.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Demon',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Grey.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Grey',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Lightblue.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Lightblue',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Lilac.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Lilac',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Mecha.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Mecha',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Pink.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Pink',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Red.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Red',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Yellow.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Yellow',
+            },
+          ],
+        },
+      },
+      {
+        name: 'BodyColor_Zombie.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Body Color',
+              value: 'Zombie',
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     layer: 'Background 1',
     folder: '1_Background',
-
     position: 1,
     kinds: [
       {
@@ -121,6 +242,118 @@ export const configuration: Config[] = [
 
         weight: 90,
         groupsDependency: [normal, zombie, mecha],
+      },
+    ],
+    files: [
+      {
+        name: 'Background_Angel.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Angel',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Demon.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Demon',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Gold.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Gold',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_GradientGrey.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'GradientGrey',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Green.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Green',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Grey.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Grey',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_LightBlue.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'LightBlue',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Red.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Red',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Violet.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Violet',
+            },
+          ],
+        },
+      },
+      {
+        name: 'Background_Yellow.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 1',
+              value: 'Yellow',
+            },
+          ],
+        },
       },
     ],
   },
@@ -176,6 +409,173 @@ export const configuration: Config[] = [
         folder: 'normal_2_5',
         weight: 5,
         groupsDependency: [normal],
+      },
+    ],
+    files: [
+      {
+        name: '2Background_Angel.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Angel',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Bubbles.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Bubbles',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Clouds.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Clouds',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Demon.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Demon',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Elipsis.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Elipsis',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Gear.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Gear',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Geometric.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Geometric',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Heart.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Heart',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Japanesse.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Japanesse',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Mandala.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Mandala',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Mosaic.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Mosaic',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Naruto.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Naruto',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Saturn.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Saturn',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Square.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Square',
+            },
+          ],
+        },
+      },
+      {
+        name: '2Background_Toxic.png',
+        metadata: {
+          attributes: [
+            {
+              trait_type: 'Background 2',
+              value: 'Toxic',
+            },
+          ],
+        },
       },
     ],
   },
@@ -911,6 +1311,7 @@ export interface Config {
   position: number;
   folder: string;
   kinds: Kind[];
+  files?: FileData[];
 }
 
 export interface Kind {
@@ -921,4 +1322,18 @@ export interface Kind {
   forAll?: bool;
   groupsDependency?: string[];
   groupsExcepted?: string[];
+}
+
+export interface FileData {
+  name: string;
+  metadata: FileMetaData;
+}
+
+export interface FileMetaData {
+  attributes: Attribute[];
+}
+
+export interface Attribute {
+  trait_type: string;
+  value: string;
 }

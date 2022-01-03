@@ -1,7 +1,12 @@
 import { expect } from 'chai';
 import { configuration } from '../src/config';
 import { generateDna } from '../src/dnaGenerator';
-import { getFilesOfAssets, readFile, writeFile } from '../src/filesManager';
+import {
+  getFilesOfAssets,
+  getFilesOfAssetsPaths,
+  readFile,
+  writeFile,
+} from '../src/filesManager';
 import { getRandom } from '../src/random';
 import { configurationTest } from './configTest';
 import hash from 'object-hash';
@@ -80,12 +85,15 @@ describe('DNA Generator', () => {
       .join(',');
   });
   it.only('split', async () => {
-    const file = await readFile('config/metadata.json');
-    console.log();
-    await writeFile(
-      'output/metadata/1.json',
-      file.join('\n').replace('<ID>', '1'),
-    );
+    const files = await getFilesOfAssetsPaths('/traits/3_BodyColor');
+    console.log(files);
+
+    // const file = await readFile('config/metadata.json');
+    // console.log();
+    // await writeFile(
+    //   'output/metadata/1.json',
+    //   file.join('\n').replace('<ID>', '1'),
+    // );
   });
 
   it('generateDna return demon if the skin is demon', async () => {
