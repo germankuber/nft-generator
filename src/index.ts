@@ -54,11 +54,12 @@ const generateFileData = async (index: number, head: string[]) => {
       );
 
       await drawNft(paths, index.toString());
-       await generateMetadata(index, paths);
-      // console.table([dataReturn], head);
+      await generateMetadata(index, paths);
+      console.table([dataReturn], head);
     }
   } catch (error) {
     await generateFileData(index, head);
   }
 };
+
 

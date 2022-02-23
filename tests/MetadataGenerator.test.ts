@@ -15,7 +15,6 @@ import { drawNft } from '../src/drawServices';
 describe('MetadataGenerator', () => {
     it('generateDna return angel if the skin is angel', async () => {
 
-      await generateFileData(index, head);
     });
   //   it('generateDna return demon if the skin is demon', async () => {
   //     (getRandom as jest.Mock).mockReturnValue(1);

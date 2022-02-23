@@ -85,7 +85,28 @@ describe('DNA Generator', () => {
       .join(',');
   });
   it.only('split', async () => {
-    const files = await getFilesOfAssetsPaths('/traits/3_BodyColor');
+    let files = await getFilesOfAssetsPaths('/traits/9_Arms/Angel');
+    console.log(files);
+
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Demon');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/LightBlue');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Mecha');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Red');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Zombie');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Brown');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Grey');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Lilac');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Pink');
+    console.log(files);
+    files = await getFilesOfAssetsPaths('/traits/9_Arms/Yellow');
     console.log(files);
 
     // const file = await readFile('config/metadata.json');
